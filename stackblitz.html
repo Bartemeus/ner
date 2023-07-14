@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html>
-  <body style="margin: 0; height: 100%; width: 100%; position: fixed; border:none;">
-    <iframe
-      src="https://github-jagsab-6cqh5r.stackblitz.io"
-      height="100%"
-      width="100%"
-      frameborder="0"
-      title="Ner"
-    ></iframe>
-  </body>
+<body style="margin: 0;
+    height: 100%;
+    width: 100%;
+	  border:none;
+    position: fixed;">
+
+<iframe
+height="100%" width="100%" frameborder="0" title="Ner" id="Ner"></iframe>
+<script>
+fetch('https://ner.kz/api/Src/Get')
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+	document.getElementById("Ner").src = data;
+  });
+</script>
+</body>
 </html>
